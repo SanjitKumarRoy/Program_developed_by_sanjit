@@ -22,13 +22,18 @@ function search_keyword(){
 		hit=`cat $f 2>/dev/null | grep -i "$keyword"`
 		if [ ! -z "$hit" ]
 		then
-			echo $f
-			echo $hit
+			echo -e "${RED}$f ${BLACK}"
+			echo "$hit"
 			echo
 		fi
 	done
 
 }
+
+## Text colour definition ##
+BLACK='\033[0;30m'        # Black
+RED='\033[0;31m'          # Red
+GREEN='\033[0;32m'        # Green
 
 ### for i in `du -a | grep --include={\.fxml} -e "\.fxml" | awk -F '\t' '{print $2}'`; do echo $i; cat $i | grep -i "end-to-end"; done
 
